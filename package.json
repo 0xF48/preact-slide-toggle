@@ -1,0 +1,56 @@
+{
+  "name": "preact-slide-toggle",
+  "version": "1.0.0",
+  "description": "preact-slide Toggle Component",
+  "main": "source/preact-slide-toggle.coffee",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./scripts/dev.config.js --mode development",
+    "build": "webpack --config ./scripts/dev.config.js --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arxii/preact-slide-toggle.git"
+  },
+  "keywords": [
+    "react",
+    "grid",
+    "tiles",
+    "preact",
+    "utility",
+    "library",
+    "matrix"
+  ],
+  "author": "arxii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arxii/preact-slide-toggle/issues"
+  },
+  "homepage": "https://arxii.github.io/preact-slide-toggle",
+  "peerDependencies": {
+    "preact": "*",
+    "preact-slide": "*",
+    "webpack": "*",
+    "less-loader": "*",
+    "css-loader": "*",
+    "style-loader": "*",
+    "coffee-loader": "*"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.2.2",
+    "css-loader": "^0.28.10",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.6",
+    "normalize.css": "^8.0.0",
+    "preact": "^8.2.7",
+    "preact-markdown": "^0.4.0",
+    "preact-slide": "^0.2.3",
+    "raw-loader": "^0.5.1",
+    "shader-box": "^1.1.2",
+    "style-loader": "^0.20.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.1.0",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}
