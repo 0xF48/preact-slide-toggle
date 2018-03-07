@@ -1,15 +1,29 @@
+require 'normalize.css'
 {h,render,Component} = require 'preact'
 {Box,Shader} = require 'shader-box'
 Markdown = require 'preact-markdown'
 require './site.less'
-require 'normalize.css'
+
 EXAMPLES = []
-PROPS = []
+PROPS = [
+	['(any preact-slide prop)','',' any preact slide prop will be passed down to the outer component']
+	['toggle','','toggle true / false']
+	['onToggle','','toggle callback on / off']
+	['className','','outer css class']
+	['barClass', '','bar class']
+	['barBeta', '','set optional bar beta, set to 0 disable and just have a sliding toggle button']
+	['trueClass', '','on div style class']
+	['falseClass', '','off div style class']
+	['disabled', '','disabled toggle mouse events']
+	['falseChild', '','off child(s) / string']
+	['trueChild', '','on child(s) / string']
+]
 
 SlideToggle = require './preact-slide-toggle.coffee'
 
 TITLE = 'Toggle'
 SAMPLE = require './sample.coffee'
+BODY = require './BODY.md'
 
 class Header extends Component
 	constructor: ->
@@ -50,18 +64,6 @@ class Header extends Component
 		@box.add(@gradient)
 		@box.clear().draw(@gradient)
 		@tick(@t)
-		# setInterval @switchTitleSnippetTextA,1000
-		setInterval @switchTitleSnippetTextB,2000
-
-	
-	switchTitleSnippetTextA: =>
-		@setState
-			title_snippet_pos_a: 1-@state.title_snippet_pos_a
-	
-
-	switchTitleSnippetTextB: =>
-		@setState
-			title_snippet_pos_b: 1-@state.title_snippet_pos_b
 		
 	
 	tick: ()=>
@@ -175,17 +177,24 @@ class Docs
 						markupOpts:
 							className: 'prop-text'
 
+		body = BODY && h Markdown,
+			markdown: BODY
+			markupOpts:
+				className: 'section'
+
+
 
 		h 'div',
 			className: 'docs'
 			h Header
 			props || null
+			body || null
 			examples || null
 			
 			h 'footer',
 				className: 'footer'
 				h 'a',
-					href: "https://github.com/arxii/preact-slide"
+					href: "https://github.com/arxii/preact-slide-toggle"
 					className: 'footer-text'
 					'Source'
 				h 'a',

@@ -5,8 +5,8 @@ uniform float fade;
 uniform float speed;
 varying vec2 v_uv;
 void main() {
-	float t = iTime * speed;
-	vec3 c = vec3(0.69-sin(seed.x+t/3e3+v_uv.y+v_uv.x)*0.3,0.713-cos(seed.y+t/3e3+v_uv.y+v_uv.x)*0.3,0.72+sin(seed.z+t/3e3+v_uv.y+v_uv.x)*0.3);
+	float t = iTime * speed / 3e3;
+	vec3 c = vec3(0.613-cos(seed.x+t+v_uv.y+v_uv.x)*0.32,0.713-sin(seed.y+t+v_uv.y+v_uv.x)*0.305,0.65+sin(seed.z+t+v_uv.y+v_uv.x)*0.31);
 	c += fade*v_uv.y;
 	gl_FragColor = vec4(c,1.0);
 }

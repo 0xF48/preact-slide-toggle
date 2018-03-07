@@ -1,11 +1,11 @@
 {
   "name": "preact-slide-toggle",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "preact-slide Toggle Component",
   "main": "source/preact-slide-toggle.coffee",
   "scripts": {
-    "dev": "webpack-dev-server --config ./scripts/dev.config.js --mode development",
-    "build": "webpack --config ./scripts/dev.config.js --mode production"
+    "dev": "webpack-dev-server --config ./scripts/site.config.js --mode development",
+    "prod": "webpack --config ./scripts/site.config.js --mode production && webpack --config ./scripts/standalone.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
     "normalize.css": "^8.0.0",
     "preact": "^8.2.7",
     "preact-markdown": "^0.4.0",
-    "preact-slide": "^0.2.3",
+    "preact-slide": "^0.2.5",
     "raw-loader": "^0.5.1",
     "shader-box": "^1.1.2",
     "style-loader": "^0.20.2",

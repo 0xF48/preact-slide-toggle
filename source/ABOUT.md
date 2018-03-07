@@ -1,1 +1,1 @@
-a toggle component for preact-slide
+A Base component class for toggle like components using <a href = 'https://arxii.github.io/preact-slide'>preact-slide</a>
