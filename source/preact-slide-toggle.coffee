@@ -7,11 +7,19 @@ class SlideToggle extends Component
 		@state = 
 			hover: false
 	onMouseEnter: =>
-		@setState hover:yes
+
+		if !@state.hover
+			@setState
+				hover:yes
 		@props.onMouseEnter?()
+		
 	onMouseLeave: =>
-		@setState hover:no
+		
+		if @state.hover
+			@setState
+				hover:no
 		@props.onMouseLeave?()
+
 	render: ->
 
 		if (@props.barBeta)?
@@ -34,12 +42,12 @@ class SlideToggle extends Component
 		disabled_cl = disabled && ' -i-slide-toggle-disabled' || ''
 		props = 
 			onClick: !disabled && @props.onToggle
-			className: '-i-slide-toggle ' + (@props.className) + ' '+disabled_cl
 			slide: yes
 			pos: pos
 			onMouseEnter: @onMouseEnter
 			onMouseLeave: @onMouseLeave
-		props = Object.assign @props,props
+		Object.assign props,@props
+		props.className = '-i-slide-toggle ' + (@props.className) + ' '+disabled_cl
 
 		h Slide, props,
 			h Slide,
