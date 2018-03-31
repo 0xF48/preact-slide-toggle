@@ -8,6 +8,7 @@ EXAMPLES = []
 PROPS = [
 	['(any preact-slide prop)','',' any preact slide prop will be passed down to the outer component']
 	['toggle','','toggle true / false']
+	['offset', '0.1','the offset position amount when hovering.']
 	['onToggle','','toggle callback on / off']
 	['className','','outer css class']
 	['barClass', '','bar class']

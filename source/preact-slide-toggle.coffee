@@ -8,8 +8,10 @@ class SlideToggle extends Component
 			hover: false
 	onMouseEnter: =>
 		@setState hover:yes
+		@props.onMouseEnter?()
 	onMouseLeave: =>
 		@setState hover:no
+		@props.onMouseLeave?()
 	render: ->
 
 		if (@props.barBeta)?
