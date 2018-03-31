@@ -4,6 +4,12 @@ require './preact-slide-toggle.less'
 class SlideToggle extends Component
 	constructor: (props)->
 		super(props)
+		@state = 
+			hover: false
+	onMouseEnter: =>
+		@setState hover:yes
+	onMouseLeave: =>
+		@setState hover:no
 	render: ->
 
 		if (@props.barBeta)?
@@ -14,14 +20,23 @@ class SlideToggle extends Component
 			bar_beta = 50
 
 		disabled = @props.disabled || !@props.onToggle
+		pos = !@props.toggle &&  (@props.barBeta != 0 && 2 || 1) || 0
+		
+		if @state.hover && !@props.disabled
+			if @props.toggle
+				pos = @props.offset || 0.1
+			else
+				pos = 1 - (@props.offset || 0.1)
+				
 
 		disabled_cl = disabled && ' -i-slide-toggle-disabled' || ''
 		props = 
 			onClick: !disabled && @props.onToggle
 			className: '-i-slide-toggle ' + (@props.className) + ' '+disabled_cl
 			slide: yes
-			pos: !@props.toggle &&  (@props.barBeta != 0 && 2 || 1) || 0
-
+			pos: pos
+			onMouseEnter: @onMouseEnter
+			onMouseLeave: @onMouseLeave
 		props = Object.assign @props,props
 
 		h Slide, props,

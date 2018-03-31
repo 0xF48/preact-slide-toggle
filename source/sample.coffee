@@ -32,7 +32,7 @@ class Sample extends Component
 			className: 'sample'
 			h Slide,
 				center: yes
-				height: 25
+				height: 30
 				vert: no
 				h Toggle,
 					toggle: @state.toggle
@@ -89,7 +89,7 @@ class Sample extends Component
 					className: 'sample-toggle blue'
 					disabled: @state.disabled
 					trueChild: '😎'
-					falseChild: '😕'
+					falseChild: '😀'
 					inverse: yes
 				
 
