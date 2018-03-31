@@ -17,6 +17,7 @@ PROPS = [
 	['disabled', '','disabled toggle mouse events']
 	['falseChild', '','off child(s) / string']
 	['trueChild', '','on child(s) / string']
+	['barChild', '','bar child(s) / string']
 ]
 
 SlideToggle = require './preact-slide-toggle.coffee'

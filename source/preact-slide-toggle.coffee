@@ -33,6 +33,8 @@ class SlideToggle extends Component
 			@props.barBeta != 0 && h Slide,
 				className: (@props.barClass || '') +  ' -i-slide-toggle-bar'
 				beta: bar_beta
+				center: yes
+				@props.barChild
 			h Slide,
 				className: (@props.falseClass || '') + ' -i-slide-toggle-off'
 				beta: beta
